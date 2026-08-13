@@ -11,6 +11,7 @@ select version();
 -- Exibe os dados do arquivo CSV de acidentes de trânsito 2025
 -- O arquivo CSV está localizado no diretório 'dados_brutos' e utiliza o delimitador ';'
 -- Lembra de inserir a o parâmetro 'encoding' para lidar com caracteres especiais, como acentos e cedilha
+
 select * from read_csv_auto(
     'dados_brutos/acidentes2025.csv',
     delim = ';',
@@ -22,7 +23,7 @@ LIMIT 10;
 
 create or replace table acidentes_prf_2025 as
 select * from read_csv_auto(
-    'dados_brutos/acidentes2025.csv',
+    '/workspaces/FAP-2026-AnaliseDados/Projeto_PRF/dados_brutos/acidentes2025.csv',
     delim = ';',
     header = true,
     encoding = 'latin-1',
